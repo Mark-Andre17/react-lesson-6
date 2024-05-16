@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import BadComponent from './BadComponent';
+import SomeBlock from './SomeBlock';
+import ParrentBlock from './ParrentBlock';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+function App(props) {
+  const isDay = props.hours < 18;
+  return(
+    <h1>
+      {isDay ? "сейчас день": "сейчас вечер"}
+      <BadComponent something={'первый текст'}/>
+      <SomeBlock/>
+      <ParrentBlock/>
+    </h1>
+    )
 }
 
 export default App;
